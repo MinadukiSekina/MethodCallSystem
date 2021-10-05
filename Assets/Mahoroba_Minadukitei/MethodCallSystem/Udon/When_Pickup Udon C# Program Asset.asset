@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: When_PlayerTrigger Udon C# Program Asset
+  m_Name: When_Pickup Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: e7e43651b9e3d3c44ba4aa1a54f47bce,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: aa91144f0e74fa44caec93b0f30e6ef8,
     type: 2}
   udonAssembly: 
   assemblyError: 
-  sourceCsScript: {fileID: 11500000, guid: 30b684fecec7f864faba33cbd2c5c883, type: 3}
-  behaviourSyncMode: 1
+  sourceCsScript: {fileID: 11500000, guid: f1f0d89a0eef1da44a1b5dad79bd1b1a, type: 3}
+  behaviourSyncMode: 2
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
   compileErrors: []
   hasInteractEvent: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 11
+      Data: 13
     - Name: 
       Entry: 7
       Data: 
@@ -127,7 +127,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: enteredCallIsGlobal
+      Data: pickedUpCallIsGlobal
     - Name: $v
       Entry: 7
       Data: 8|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -154,10 +154,10 @@ MonoBehaviour:
       Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: enteredCallIsGlobal
+      Data: pickedUpCallIsGlobal
     - Name: symbolUniqueName
       Entry: 1
-      Data: enteredCallIsGlobal
+      Data: pickedUpCallIsGlobal
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -175,7 +175,7 @@ MonoBehaviour:
       Data: 12|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u7BC4\u56F2\u5185\u306B\u5165\u3063\u305F\u6642"
+      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u6301\u3063\u305F\u6642"
     - Name: 
       Entry: 8
       Data: 
@@ -214,7 +214,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: enteredCallNetworkTarget
+      Data: pickedUpCallNetworkTarget
     - Name: $v
       Entry: 7
       Data: 15|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -241,10 +241,10 @@ MonoBehaviour:
       Data: VRCUdonCommonInterfacesNetworkEventTarget
     - Name: symbolOriginalName
       Entry: 1
-      Data: enteredCallNetworkTarget
+      Data: pickedUpCallNetworkTarget
     - Name: symbolUniqueName
       Entry: 1
-      Data: enteredCallNetworkTarget
+      Data: pickedUpCallNetworkTarget
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -262,7 +262,7 @@ MonoBehaviour:
       Data: 19|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002enteredCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
+      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002pickedUpCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
     - Name: 
       Entry: 8
       Data: 
@@ -292,7 +292,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: enteredCallMethodName
+      Data: pickedUpCallMethodName
     - Name: $v
       Entry: 7
       Data: 21|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -319,10 +319,10 @@ MonoBehaviour:
       Data: SystemString
     - Name: symbolOriginalName
       Entry: 1
-      Data: enteredCallMethodName
+      Data: pickedUpCallMethodName
     - Name: symbolUniqueName
       Entry: 1
-      Data: enteredCallMethodName
+      Data: pickedUpCallMethodName
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -370,7 +370,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: stayCallIsGlobal
+      Data: droppedCallIsGlobal
     - Name: $v
       Entry: 7
       Data: 27|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -391,10 +391,10 @@ MonoBehaviour:
       Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: stayCallIsGlobal
+      Data: droppedCallIsGlobal
     - Name: symbolUniqueName
       Entry: 1
-      Data: stayCallIsGlobal
+      Data: droppedCallIsGlobal
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -412,7 +412,7 @@ MonoBehaviour:
       Data: 30|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u7BC4\u56F2\u5185\u306B\u5C45\u308B\u6642"
+      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u96E2\u3057\u305F\u6642"
     - Name: 
       Entry: 8
       Data: 
@@ -451,7 +451,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: stayCallNetworkTarget
+      Data: droppedCallNetworkTarget
     - Name: $v
       Entry: 7
       Data: 33|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -472,10 +472,10 @@ MonoBehaviour:
       Data: VRCUdonCommonInterfacesNetworkEventTarget
     - Name: symbolOriginalName
       Entry: 1
-      Data: stayCallNetworkTarget
+      Data: droppedCallNetworkTarget
     - Name: symbolUniqueName
       Entry: 1
-      Data: stayCallNetworkTarget
+      Data: droppedCallNetworkTarget
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -493,7 +493,7 @@ MonoBehaviour:
       Data: 36|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002stayCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
+      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002droppedCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
     - Name: 
       Entry: 8
       Data: 
@@ -523,7 +523,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: stayCallMethodName
+      Data: droppedCallMethodName
     - Name: $v
       Entry: 7
       Data: 38|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -544,10 +544,10 @@ MonoBehaviour:
       Data: SystemString
     - Name: symbolOriginalName
       Entry: 1
-      Data: stayCallMethodName
+      Data: droppedCallMethodName
     - Name: symbolUniqueName
       Entry: 1
-      Data: stayCallMethodName
+      Data: droppedCallMethodName
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -595,7 +595,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: exitedCallIsGlobal
+      Data: useDownedCallIsGlobal
     - Name: $v
       Entry: 7
       Data: 43|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -616,10 +616,10 @@ MonoBehaviour:
       Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: exitedCallIsGlobal
+      Data: useDownedCallIsGlobal
     - Name: symbolUniqueName
       Entry: 1
-      Data: exitedCallIsGlobal
+      Data: useDownedCallIsGlobal
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -637,7 +637,8 @@ MonoBehaviour:
       Data: 46|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u7BC4\u56F2\u5185\u304B\u3089\u51FA\u305F\u6642"
+      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304CUse\u3067\u62BC\u4E0B\u3057\u305F\u6642\u203BAuto
+        Hold\u6307\u5B9A\u6642\u306E\u307F"
     - Name: 
       Entry: 8
       Data: 
@@ -676,7 +677,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: exitedCallNetworkTarget
+      Data: useDownedCallNetworkTarget
     - Name: $v
       Entry: 7
       Data: 49|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -697,10 +698,10 @@ MonoBehaviour:
       Data: VRCUdonCommonInterfacesNetworkEventTarget
     - Name: symbolOriginalName
       Entry: 1
-      Data: exitedCallNetworkTarget
+      Data: useDownedCallNetworkTarget
     - Name: symbolUniqueName
       Entry: 1
-      Data: exitedCallNetworkTarget
+      Data: useDownedCallNetworkTarget
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -718,7 +719,7 @@ MonoBehaviour:
       Data: 52|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002exitedCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
+      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002useDownedCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
     - Name: 
       Entry: 8
       Data: 
@@ -748,7 +749,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: exitedCallMethodName
+      Data: useDownedCallMethodName
     - Name: $v
       Entry: 7
       Data: 54|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -769,10 +770,10 @@ MonoBehaviour:
       Data: SystemString
     - Name: symbolOriginalName
       Entry: 1
-      Data: exitedCallMethodName
+      Data: useDownedCallMethodName
     - Name: symbolUniqueName
       Entry: 1
-      Data: exitedCallMethodName
+      Data: useDownedCallMethodName
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -820,7 +821,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: eventPlayer
+      Data: useUppedCallIsGlobal
     - Name: $v
       Entry: 7
       Data: 59|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -828,14 +829,8 @@ MonoBehaviour:
       Entry: 7
       Data: 60|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
-      Entry: 7
-      Data: 61|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: VRC.SDKBase.VRCPlayerApi, VRCSDKBase
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 9
+      Data: 10
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -844,13 +839,13 @@ MonoBehaviour:
       Data: 0
     - Name: symbolResolvedTypeName
       Entry: 1
-      Data: VRCSDKBaseVRCPlayerApi
+      Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: eventPlayer
+      Data: useUppedCallIsGlobal
     - Name: symbolUniqueName
       Entry: 1
-      Data: eventPlayer
+      Data: useUppedCallIsGlobal
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -859,22 +854,176 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 62|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 61|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 63|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
-    - Name: tooltip
+      Data: 62|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
+    - Name: header
       Entry: 1
-      Data: "\u5404\u30A4\u30D9\u30F3\u30C8\u3067\u53D7\u3051\u53D6\u3063\u3066\u3044\u308BPlayerAPI"
+      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304CUse\u62BC\u4E0B\u304B\u3089\u623B\u3057\u305F\u6642\u203BAuto
+        Hold\u6307\u5B9A\u6642\u306E\u307F"
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 64|UnityEngine.HideInInspector, UnityEngine.CoreModule
+      Data: 63|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+    - Name: tooltip
+      Entry: 1
+      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001\u30B0\u30ED\u30FC\u30D0\u30EB\u306B\u547C\u3073\u51FA\u3057\u307E\u3059\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 64|UnityEngine.SerializeField, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: useUppedCallNetworkTarget
+    - Name: $v
+      Entry: 7
+      Data: 65|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 66|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 17
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCUdonCommonInterfacesNetworkEventTarget
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: useUppedCallNetworkTarget
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: useUppedCallNetworkTarget
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 67|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 68|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+    - Name: tooltip
+      Entry: 1
+      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002useUppedCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 69|UnityEngine.SerializeField, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: useUppedCallMethodName
+    - Name: $v
+      Entry: 7
+      Data: 70|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 71|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 23
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemString
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: useUppedCallMethodName
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: useUppedCallMethodName
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 72|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 73|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+    - Name: tooltip
+      Entry: 1
+      Data: "\u547C\u3073\u51FA\u3059\u51E6\u7406\u306E\u540D\u524D\u3092\u6307\u5B9A\u3057\u3066\u304F\u3060\u3055\u3044\u3002()\u306F\u4E0D\u8981\u3067\u3059\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 74|UnityEngine.SerializeField, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 

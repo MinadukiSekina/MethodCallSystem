@@ -6,7 +6,7 @@ using VRC.Udon;
 
 namespace Minadukitei.Products
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class When_PlayerTrigger : UdonSharpBehaviour
     {
         [Tooltip("処理を実行するUdon")]
@@ -41,63 +41,63 @@ namespace Minadukitei.Products
 
         public override void OnPlayerTriggerEnter(VRCPlayerApi player)
         {
-            // 指定が無ければ処理しない
+            // If it is not destinated, do nothing.
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(enteredCallMethodName)) return;
 
-            // PlayerAPIの格納
+            // Hold PlayerAPI.
             eventPlayer = player;
 
             if (enteredCallIsGlobal)
             {
-                // グローバルで呼び出し
+                // Call in global.
                 otherBehaviour.SendCustomNetworkEvent(enteredCallNetworkTarget, enteredCallMethodName);
             }
             else
             {
-                // ローカルで呼び出し
+                // Call in local.
                 otherBehaviour.SendCustomEvent(enteredCallMethodName);
             }
         }
 
         public override void OnPlayerTriggerStay(VRCPlayerApi player)
         {
-            // 指定が無ければ処理しない
+            // If it is not destinated, do nothing.
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(stayCallMethodName)) return;
 
-            // PlayerAPIの格納
+            // Hold PlayerAPI.
             eventPlayer = player;
 
             if (stayCallIsGlobal)
             {
-                // グローバルで呼び出し
+                // Call in global.
                 otherBehaviour.SendCustomNetworkEvent(stayCallNetworkTarget, stayCallMethodName);
             }
             else
             {
-                // ローカルで呼び出し
+                // Call in local.
                 otherBehaviour.SendCustomEvent(stayCallMethodName);
             }
         }
 
         public override void OnPlayerTriggerExit(VRCPlayerApi player)
         {
-            // 指定が無ければ処理しない
+            // If it is not destinated, do nothing.
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(exitedCallMethodName)) return;
 
-            // PlayerAPIの格納
+            // Hold PlayerAPI.
             eventPlayer = player;
 
             if (exitedCallIsGlobal)
             {
-                // グローバルで呼び出し
+                // Call in global.
                 otherBehaviour.SendCustomNetworkEvent(exitedCallNetworkTarget, exitedCallMethodName);
             }
             else
             {
-                // ローカルで呼び出し
+                // Call in local.
                 otherBehaviour.SendCustomEvent(exitedCallMethodName);
             }
         }
