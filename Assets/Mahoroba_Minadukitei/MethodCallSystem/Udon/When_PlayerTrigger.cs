@@ -36,17 +36,11 @@ namespace Minadukitei.Products
         [Tooltip("呼び出す処理の名前を指定してください。()は不要です。")]
         [SerializeField] private string exitedCallMethodName;
 
-        [Tooltip("各イベントで受け取っているPlayerAPI")]
-        [HideInInspector] public VRCPlayerApi eventPlayer;
-
         public override void OnPlayerTriggerEnter(VRCPlayerApi player)
         {
             // If it is not destinated, do nothing.
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(enteredCallMethodName)) return;
-
-            // Hold PlayerAPI.
-            eventPlayer = player;
 
             if (enteredCallIsGlobal)
             {
@@ -66,9 +60,6 @@ namespace Minadukitei.Products
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(stayCallMethodName)) return;
 
-            // Hold PlayerAPI.
-            eventPlayer = player;
-
             if (stayCallIsGlobal)
             {
                 // Call in global.
@@ -86,9 +77,6 @@ namespace Minadukitei.Products
             // If it is not destinated, do nothing.
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(exitedCallMethodName)) return;
-
-            // Hold PlayerAPI.
-            eventPlayer = player;
 
             if (exitedCallIsGlobal)
             {

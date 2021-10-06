@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: When_PlayerTrigger Udon C# Program Asset
+  m_Name: When_JoinLeft Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: e7e43651b9e3d3c44ba4aa1a54f47bce,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 986a8ead35dc66546a1b22d8450c231f,
     type: 2}
   udonAssembly: 
   assemblyError: 
-  sourceCsScript: {fileID: 11500000, guid: 30b684fecec7f864faba33cbd2c5c883, type: 3}
-  behaviourSyncMode: 1
+  sourceCsScript: {fileID: 11500000, guid: 1c061d285460c194c86db5247cb96f9f, type: 3}
+  behaviourSyncMode: 2
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
   compileErrors: []
   hasInteractEvent: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: enteredCallIsGlobal
+      Data: joinedPlayerLocalCheck
     - Name: $v
       Entry: 7
       Data: 8|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -154,10 +154,10 @@ MonoBehaviour:
       Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: enteredCallIsGlobal
+      Data: joinedPlayerLocalCheck
     - Name: symbolUniqueName
       Entry: 1
-      Data: enteredCallIsGlobal
+      Data: joinedPlayerLocalCheck
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -175,7 +175,7 @@ MonoBehaviour:
       Data: 12|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u7BC4\u56F2\u5185\u306B\u5165\u3063\u305F\u6642"
+      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u30EF\u30FC\u30EB\u30C9\u306BJoin\u3057\u305F\u6642"
     - Name: 
       Entry: 8
       Data: 
@@ -184,7 +184,7 @@ MonoBehaviour:
       Data: 13|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001\u30B0\u30ED\u30FC\u30D0\u30EB\u306B\u547C\u3073\u51FA\u3057\u307E\u3059\u3002"
+      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001Join\u3057\u305F\u30D7\u30EC\u30A4\u30E4\u30FC\u304CLocal\u304B\u5224\u65AD\u3057\u307E\u3059\u3002"
     - Name: 
       Entry: 8
       Data: 
@@ -214,7 +214,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: enteredCallNetworkTarget
+      Data: exceptLocalPlayerJoin
     - Name: $v
       Entry: 7
       Data: 15|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -222,14 +222,8 @@ MonoBehaviour:
       Entry: 7
       Data: 16|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
-      Entry: 7
-      Data: 17|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: VRC.Udon.Common.Interfaces.NetworkEventTarget, VRC.Udon.Common
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 9
+      Data: 10
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -238,13 +232,13 @@ MonoBehaviour:
       Data: 0
     - Name: symbolResolvedTypeName
       Entry: 1
-      Data: VRCUdonCommonInterfacesNetworkEventTarget
+      Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: enteredCallNetworkTarget
+      Data: exceptLocalPlayerJoin
     - Name: symbolUniqueName
       Entry: 1
-      Data: enteredCallNetworkTarget
+      Data: exceptLocalPlayerJoin
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -253,22 +247,22 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 19|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+      Data: 18|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002enteredCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
+      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001Join\u3057\u305F\u30D7\u30EC\u30A4\u30E4\u30FC\u304CLocal\u306A\u3089\u51E6\u7406\u3092\u547C\u3073\u51FA\u3057\u307E\u305B\u3093\u3002joinedPlayerLocalCheck\u304C\u30C1\u30A7\u30C3\u30AF\u3055\u308C\u3066\u3044\u308B\u5834\u5408\u306E\u307F\u6709\u52B9"
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|UnityEngine.SerializeField, UnityEngine.CoreModule
+      Data: 19|UnityEngine.SerializeField, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 
@@ -292,16 +286,88 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: enteredCallMethodName
+      Data: exceptRemotePlayerJoin
     - Name: $v
       Entry: 7
-      Data: 21|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+      Data: 20|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 22|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+      Data: 21|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 10
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemBoolean
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: exceptRemotePlayerJoin
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: exceptRemotePlayerJoin
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 23|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+    - Name: tooltip
+      Entry: 1
+      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001Join\u3057\u305F\u30D7\u30EC\u30A4\u30E4\u30FC\u304CRemote\u306A\u3089\u51E6\u7406\u3092\u547C\u3073\u51FA\u3057\u307E\u305B\u3093\u3002joinedPlayerLocalCheck\u304C\u30C1\u30A7\u30C3\u30AF\u3055\u308C\u3066\u3044\u308B\u5834\u5408\u306E\u307F\u6709\u52B9"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|UnityEngine.SerializeField, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: joinedCallMethodName
+    - Name: $v
+      Entry: 7
+      Data: 25|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 26|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 7
-      Data: 23|System.RuntimeType, mscorlib
+      Data: 27|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.String, mscorlib
@@ -319,10 +385,10 @@ MonoBehaviour:
       Data: SystemString
     - Name: symbolOriginalName
       Entry: 1
-      Data: enteredCallMethodName
+      Data: joinedCallMethodName
     - Name: symbolUniqueName
       Entry: 1
-      Data: enteredCallMethodName
+      Data: joinedCallMethodName
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -331,13 +397,13 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 28|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 25|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+      Data: 29|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
       Data: "\u547C\u3073\u51FA\u3059\u51E6\u7406\u306E\u540D\u524D\u3092\u6307\u5B9A\u3057\u3066\u304F\u3060\u3055\u3044\u3002()\u306F\u4E0D\u8981\u3067\u3059\u3002"
@@ -346,7 +412,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 26|UnityEngine.SerializeField, UnityEngine.CoreModule
+      Data: 30|UnityEngine.SerializeField, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 
@@ -370,13 +436,13 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: stayCallIsGlobal
+      Data: leftPlayerLocalCheck
     - Name: $v
       Entry: 7
-      Data: 27|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+      Data: 31|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 28|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+      Data: 32|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
       Data: 10
@@ -391,10 +457,10 @@ MonoBehaviour:
       Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: stayCallIsGlobal
+      Data: leftPlayerLocalCheck
     - Name: symbolUniqueName
       Entry: 1
-      Data: stayCallIsGlobal
+      Data: leftPlayerLocalCheck
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -403,31 +469,31 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 33|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 30|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
+      Data: 34|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u7BC4\u56F2\u5185\u306B\u5C45\u308B\u6642"
+      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u30EF\u30FC\u30EB\u30C9\u3092\u96E2\u308C\u305F\u6642"
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 31|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+      Data: 35|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001\u30B0\u30ED\u30FC\u30D0\u30EB\u306B\u547C\u3073\u51FA\u3057\u307E\u3059\u3002"
+      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001\u96E2\u308C\u305F\u30D7\u30EC\u30A4\u30E4\u30FC\u304CLocal\u304B\u5224\u65AD\u3057\u307E\u3059\u3002"
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 32|UnityEngine.SerializeField, UnityEngine.CoreModule
+      Data: 36|UnityEngine.SerializeField, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 
@@ -451,157 +517,13 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: stayCallNetworkTarget
+      Data: exceptLocalPlayerLeft
     - Name: $v
       Entry: 7
-      Data: 33|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+      Data: 37|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 34|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
-    - Name: internalType
-      Entry: 9
-      Data: 17
-    - Name: declarationType
-      Entry: 3
-      Data: 1
-    - Name: syncMode
-      Entry: 3
-      Data: 0
-    - Name: symbolResolvedTypeName
-      Entry: 1
-      Data: VRCUdonCommonInterfacesNetworkEventTarget
-    - Name: symbolOriginalName
-      Entry: 1
-      Data: stayCallNetworkTarget
-    - Name: symbolUniqueName
-      Entry: 1
-      Data: stayCallNetworkTarget
-    - Name: symbolDefaultValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: fieldAttributes
-      Entry: 7
-      Data: 35|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 36|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
-    - Name: tooltip
-      Entry: 1
-      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002stayCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 37|UnityEngine.SerializeField, UnityEngine.CoreModule
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: userBehaviourSource
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: stayCallMethodName
-    - Name: $v
-      Entry: 7
-      Data: 38|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
-    - Name: fieldSymbol
-      Entry: 7
-      Data: 39|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
-    - Name: internalType
-      Entry: 9
-      Data: 23
-    - Name: declarationType
-      Entry: 3
-      Data: 1
-    - Name: syncMode
-      Entry: 3
-      Data: 0
-    - Name: symbolResolvedTypeName
-      Entry: 1
-      Data: SystemString
-    - Name: symbolOriginalName
-      Entry: 1
-      Data: stayCallMethodName
-    - Name: symbolUniqueName
-      Entry: 1
-      Data: stayCallMethodName
-    - Name: symbolDefaultValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: fieldAttributes
-      Entry: 7
-      Data: 40|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 41|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
-    - Name: tooltip
-      Entry: 1
-      Data: "\u547C\u3073\u51FA\u3059\u51E6\u7406\u306E\u540D\u524D\u3092\u6307\u5B9A\u3057\u3066\u304F\u3060\u3055\u3044\u3002()\u306F\u4E0D\u8981\u3067\u3059\u3002"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 42|UnityEngine.SerializeField, UnityEngine.CoreModule
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: userBehaviourSource
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: exitedCallIsGlobal
-    - Name: $v
-      Entry: 7
-      Data: 43|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
-    - Name: fieldSymbol
-      Entry: 7
-      Data: 44|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+      Data: 38|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
       Data: 10
@@ -616,10 +538,10 @@ MonoBehaviour:
       Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: exitedCallIsGlobal
+      Data: exceptLocalPlayerLeft
     - Name: symbolUniqueName
       Entry: 1
-      Data: exitedCallIsGlobal
+      Data: exceptLocalPlayerLeft
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -628,31 +550,22 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 45|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 39|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 46|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
-    - Name: header
-      Entry: 1
-      Data: "\u30D7\u30EC\u30A4\u30E4\u30FC\u304C\u7BC4\u56F2\u5185\u304B\u3089\u51FA\u305F\u6642"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 47|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+      Data: 40|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001\u30B0\u30ED\u30FC\u30D0\u30EB\u306B\u547C\u3073\u51FA\u3057\u307E\u3059\u3002"
+      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001\u96E2\u308C\u305F\u30D7\u30EC\u30A4\u30E4\u30FC\u304CLocal\u306A\u3089\u51E6\u7406\u3092\u547C\u3073\u51FA\u3057\u307E\u305B\u3093\u3002leftPlayerLocalCheck\u304C\u30C1\u30A7\u30C3\u30AF\u3055\u308C\u3066\u3044\u308B\u5834\u5408\u306E\u307F\u6709\u52B9"
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 48|UnityEngine.SerializeField, UnityEngine.CoreModule
+      Data: 41|UnityEngine.SerializeField, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 
@@ -676,16 +589,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: exitedCallNetworkTarget
+      Data: exceptRemotePlayerLeft
     - Name: $v
       Entry: 7
-      Data: 49|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+      Data: 42|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 50|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+      Data: 43|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
-      Data: 17
+      Data: 10
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -694,13 +607,13 @@ MonoBehaviour:
       Data: 0
     - Name: symbolResolvedTypeName
       Entry: 1
-      Data: VRCUdonCommonInterfacesNetworkEventTarget
+      Data: SystemBoolean
     - Name: symbolOriginalName
       Entry: 1
-      Data: exitedCallNetworkTarget
+      Data: exceptRemotePlayerLeft
     - Name: symbolUniqueName
       Entry: 1
-      Data: exitedCallNetworkTarget
+      Data: exceptRemotePlayerLeft
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -709,22 +622,22 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 51|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 44|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 52|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+      Data: 45|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: "\u547C\u3073\u51FA\u3057\u6642\u306E\u901A\u77E5\u5148\u3002exitedCallIsGlobal\u304C\u30C1\u30A7\u30C3\u30AF\u6642\u306E\u307F\u6709\u52B9\u3002"
+      Data: "\u30C1\u30A7\u30C3\u30AF\u6642\u3001\u96E2\u308C\u305F\u30D7\u30EC\u30A4\u30E4\u30FC\u304CRemote\u306A\u3089\u51E6\u7406\u3092\u547C\u3073\u51FA\u3057\u307E\u305B\u3093\u3002leftPlayerLocalCheck\u304C\u30C1\u30A7\u30C3\u30AF\u3055\u308C\u3066\u3044\u308B\u5834\u5408\u306E\u307F\u6709\u52B9"
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 53|UnityEngine.SerializeField, UnityEngine.CoreModule
+      Data: 46|UnityEngine.SerializeField, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 
@@ -748,16 +661,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: exitedCallMethodName
+      Data: LeftCallMethodName
     - Name: $v
       Entry: 7
-      Data: 54|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+      Data: 47|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 55|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+      Data: 48|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
-      Data: 23
+      Data: 27
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -769,10 +682,10 @@ MonoBehaviour:
       Data: SystemString
     - Name: symbolOriginalName
       Entry: 1
-      Data: exitedCallMethodName
+      Data: LeftCallMethodName
     - Name: symbolUniqueName
       Entry: 1
-      Data: exitedCallMethodName
+      Data: LeftCallMethodName
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -781,13 +694,13 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 56|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 49|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 57|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+      Data: 50|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
       Data: "\u547C\u3073\u51FA\u3059\u51E6\u7406\u306E\u540D\u524D\u3092\u6307\u5B9A\u3057\u3066\u304F\u3060\u3055\u3044\u3002()\u306F\u4E0D\u8981\u3067\u3059\u3002"
@@ -796,7 +709,76 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 58|UnityEngine.SerializeField, UnityEngine.CoreModule
+      Data: 51|UnityEngine.SerializeField, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: playerApi
+    - Name: $v
+      Entry: 7
+      Data: 52|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 53|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 54|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VRC.SDKBase.VRCPlayerApi, VRCSDKBase
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCSDKBaseVRCPlayerApi
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: playerApi
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: playerApi
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 55|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 56|UnityEngine.HideInInspector, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 
