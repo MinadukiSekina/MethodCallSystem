@@ -10,7 +10,19 @@ namespace Minadukitei.Test
     {
         [SerializeField] private UnityEngine.UI.Text text;
         [SerializeField] private Minadukitei.Products.When_JoinLeft joinLeft;
+        [SerializeField] private GameObject targetObject;
+        [UdonSynced(UdonSyncMode.None), FieldChangeCallback(nameof(TargetEnable))]private bool _targetEnable;
 
+        public bool TargetEnable
+        {
+            get => _targetEnable;
+            set
+            {
+                _targetEnable = value;
+                SetEnable();
+                Debug.Log($"{nameof(TargetEnable)}:Done");
+            }
+        }
         public void PickUp()
         {
             text.text = $"{nameof(PickUp)}";
@@ -57,6 +69,30 @@ namespace Minadukitei.Test
         public void Left()
         {
             text.text += $"\n{nameof(OnPlayerLeft)}:{joinLeft.playerApi.displayName}";
+        }
+        public void SetEnable()
+        {
+            targetObject.SetActive(TargetEnable);
+        }
+
+        public void ChangeEnable()
+        {
+            TargetEnable = !TargetEnable;
+            RequestSerialization();
+            Debug.Log($"{nameof(ChangeEnable)} Done");
+        }
+        public void InteractCalled()
+        {
+            if (Networking.LocalPlayer.IsOwner(gameObject))
+            {
+                Debug.Log($"{Networking.LocalPlayer.displayName} is owner, so he will do");
+                ChangeEnable();
+            }
+            else
+            {
+                Debug.Log($"{Networking.LocalPlayer.displayName} is not owner, so owner will do");
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, nameof(ChangeEnable));
+            }
         }
     }
 }
