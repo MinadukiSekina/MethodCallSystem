@@ -39,7 +39,7 @@ namespace Minadukitei.Products
         public void SetEnable()
         {
             if (!initialized) return;
-            for (int i = 0; i < TargetEnables.Length; i++)
+            for (int i = 0; i < targetObjects.Length; i++)
             {
                 if (targetObjects[i] == null) continue;
                 targetObjects[i].SetActive(TargetEnables[i]);

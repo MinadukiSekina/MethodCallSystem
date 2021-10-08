@@ -6,7 +6,7 @@ using VRC.Udon;
 
 namespace Minadukitei.Products
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
     public class When_PlayerTrigger : UdonSharpBehaviour
     {
         [Tooltip("処理を実行するUdon")]
