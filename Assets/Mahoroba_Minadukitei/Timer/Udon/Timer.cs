@@ -11,6 +11,8 @@ namespace Minadukitei.Products
     {
         [Tooltip("処理を実行するUdon")]
         [SerializeField] private UdonBehaviour otherBehaviour;
+        [Tooltip("チェック時、自動で実行を開始します。※注意：明示的に TimerStop を呼び出さない限り実行し続けます。")]
+        [SerializeField] private bool autoStart;
         [Tooltip("チェック時、グローバルに呼び出します。")]
         [SerializeField] private bool delayCallIsGlobal;
         [Tooltip("呼び出し時の通知先。delayCallIsGlobalがチェック時のみ有効。")]
@@ -22,6 +24,12 @@ namespace Minadukitei.Products
 
         // flag of stop
         private bool timerStop = false;
+
+        public void Start()
+        {
+            if (!autoStart) return;
+            TimerStart();
+        }
 
         public void TimerStart()
         {
