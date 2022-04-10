@@ -35,12 +35,15 @@ namespace Minadukitei.Products
         [SerializeField] private VRC.Udon.Common.Interfaces.NetworkEventTarget exitedCallNetworkTarget;
         [Tooltip("呼び出す処理の名前を指定してください。()は不要です。")]
         [SerializeField] private string exitedCallMethodName;
+        [HideInInspector] public VRCPlayerApi PlayerApi;
 
         public override void OnPlayerTriggerEnter(VRCPlayerApi player)
         {
             // If it is not destinated, do nothing.
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(enteredCallMethodName)) return;
+
+            PlayerApi = player;
 
             if (enteredCallIsGlobal)
             {
@@ -60,6 +63,8 @@ namespace Minadukitei.Products
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(stayCallMethodName)) return;
 
+            PlayerApi = player;
+
             if (stayCallIsGlobal)
             {
                 // Call in global.
@@ -77,6 +82,8 @@ namespace Minadukitei.Products
             // If it is not destinated, do nothing.
             if (otherBehaviour == null) return;
             if (string.IsNullOrWhiteSpace(exitedCallMethodName)) return;
+
+            PlayerApi = player;
 
             if (exitedCallIsGlobal)
             {

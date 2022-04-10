@@ -44,6 +44,9 @@ namespace Minadukitei.Products
                 if (exceptRemotePlayerJoin && !player.isLocal) return;
             }
 
+            if (otherBehaviour == null) return;
+            if (string.IsNullOrWhiteSpace(joinedCallMethodName)) return;
+
             playerApi = player;
             otherBehaviour.SendCustomEvent(joinedCallMethodName);
         }
@@ -56,6 +59,9 @@ namespace Minadukitei.Products
                 if (exceptLocalPlayerLeft && player.isLocal) return;
                 if (exceptRemotePlayerLeft && !player.isLocal) return;
             }
+
+            if (otherBehaviour == null) return;
+            if (string.IsNullOrWhiteSpace(LeftCallMethodName)) return;
 
             playerApi = player;
             otherBehaviour.SendCustomEvent(LeftCallMethodName);
